@@ -17,7 +17,7 @@ An esoteric programming language for generating RGB patterns, written in Rust.
 
 ## Getting Started
 ```bash
-git clone https://github.com/yourusername/RGBLang.git
+git clone https://github.com/islamfazliyev/RGBLang.git
 cd RGBLang
 cargo run
 ```
