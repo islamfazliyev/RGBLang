@@ -1,4 +1,4 @@
-echo '# RGBLang 🎨
+# RGBLang 🎨
 
 An esoteric programming language for generating RGB patterns, written in Rust.
 
@@ -32,4 +32,4 @@ cargo run -- "01,2"
 
 ---
 
-*Created with passion for esoteric languages and Rust!* 🦀' > README.md
+*Created with passion for esoteric languages and Rust!* 🦀
