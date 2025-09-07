@@ -8,20 +8,19 @@ An esoteric programming language for generating RGB patterns, written in Rust.
 - Real-time visual output
 
 ## Examples
-\`\`\`bash
+```bash
 # Input: "01,2R(2)"
 # Output:
 🔴🟢
-🔵  
-🔵
-\`\`\`
+🔵🔵🔵
+```
 
 ## Getting Started
-\`\`\`bash
+```bash
 git clone https://github.com/yourusername/RGBLang.git
 cd RGBLang
-cargo run -- "01,2"
-\`\`\`
+cargo run
+```
 
 ## Syntax
 - `0` = Red
