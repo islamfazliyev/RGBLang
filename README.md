@@ -15,6 +15,8 @@ An esoteric programming language for generating RGB patterns, written in Rust.
 🔵🔵🔵
 ```
 
+also try: 1000,.0R(1)22,.0R(3),.1010 you won't regret it trust me 🗿
+
 ## Getting Started
 ```bash
 git clone https://github.com/islamfazliyev/RGBLang.git
@@ -28,6 +30,7 @@ cargo run
 - `2` = Blue
 - `,` = New line
 - `R(n)` = Repeat previous pattern `n` times
+- `.` = Breakpoint (start repetition from here)
 
 ## 🔍 See Also
 
