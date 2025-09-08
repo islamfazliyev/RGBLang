@@ -12,6 +12,7 @@ pub  fn lexer(content: &str) -> Result<Vec<Tokens>, String>
             '1' if !in_repeat => token.push(Tokens::GREEN),
             '2' if !in_repeat => token.push(Tokens::BLUE),
             ',' => token.push(Tokens::NEWLINE),
+            '.' => token.push(Tokens::NONREPEATPOINT),
             'R' => {
                 token.push(Tokens::REPEAT);
                 if let Some(&'(') = chars.peek() {

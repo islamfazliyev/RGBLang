@@ -39,7 +39,6 @@ fn run()
                 return;
             }
         };
-        
 
         let mut parser = Parser::new(tokens);
 

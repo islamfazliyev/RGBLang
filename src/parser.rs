@@ -13,6 +13,7 @@ pub struct Parser {
     tokens: Vec<Tokens>,
     pos: usize,
     output: Vec<String>,
+    breakpoint_pos: Option<usize>,
 }
 
 
@@ -22,6 +23,7 @@ impl Parser {
             tokens,
             pos: 0,
             output: Vec::new(),
+            breakpoint_pos: None,
         }
     }
 
@@ -78,12 +80,18 @@ impl Parser {
                     print!("\n");
                     Ok(())
                 }
+
+                Tokens::NONREPEATPOINT => {
+                    self.handle_token(Tokens::NONREPEATPOINT, "non repeat point")?;
+                    self.breakpoint_pos = Some(self.output.len());
+                    Ok(())
+                }
                 
                 Tokens::REPEAT => {
                     self.eat(Tokens::REPEAT)?;
 
                     self.eat(Tokens::OPENBRACKET)?;
-
+                    
                     let repeat_count = if let Some(Tokens::VALUE(n)) = self.current_token() {
                         *n
                     } else {
@@ -94,22 +102,24 @@ impl Parser {
                     };
                     self.pos += 1;
                     self.eat(Tokens::CLOSEBRACKET)?;
+                    let start_index = self.breakpoint_pos.unwrap_or(0);
+                    let elements_to_repeat = &self.output[start_index..];
                     let mut last_line = Vec::new();
                     for t in self.output.iter().rev() {
                         if t == "\n" { break; }
                         last_line.push(t.clone());
                     }
+                    
                     last_line.reverse();
 
                     // Repeat line
                     for _ in 0..repeat_count {
-                        for item in &last_line {
-                            self.output.push(item.clone());
+                        for item in elements_to_repeat {
                             print!("{}", match item.as_str() {
                                 "red" => "██".red(),
                                 "green" => "██".green(),
                                 "blue" => "██".blue(),
-                                _ => "  ".normal(),
+                                _ => "\n".normal(),
                             });
                         }
                         

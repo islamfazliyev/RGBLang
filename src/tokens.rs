@@ -4,6 +4,7 @@ pub enum Tokens {
     GREEN,
     BLUE,
     NEWLINE,
+    NONREPEATPOINT,
     OPENBRACKET,
     CLOSEBRACKET,
     REPEAT,
