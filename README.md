@@ -29,6 +29,13 @@ cargo run
 - `,` = New line
 - `R(n)` = Repeat previous pattern `n` times
 
+## 🔍 See Also
+
+For a more advanced implementation with additional features like compound expressions and professional error handling, check out:
+- [rgblang2](https://github.com/cbarrick/rgblang2) by [@cbarrick](https://github.com/cbarrick)
 ---
 
 *Created with passion for esoteric languages and Rust!* 🦀
+
+---
+

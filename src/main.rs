@@ -1,40 +1,57 @@
-use crate::{lexer::{lexer}, parser::Parser};
-use std::{io::{self}, };
+use crate::{cli_ui::cli_ui, lexer::lexer, parser::Parser};
 
 mod lexer;
 mod parser;
 mod tokens;
+mod cli_ui;
+use cli_ui::CliError;
+
 
 fn main()
 {
-    let stdin = io::stdin();
-    let mut input = String::new();
-    
-    if let Err(err) = stdin.read_line(&mut input) {
-        eprintln!("Failed to read line: {}", err);
-        return;
-    }
-    
-    let tokens = match lexer(&input.trim()) {
-        Ok(tokens) => {
-            tokens
-        }
-        Err(err) => {
-            eprintln!("Lexer error: {}", err);
-            return;
-        }
-    };
-    
+    println!("RGBLang");
+    run();
+}
 
-    let mut parser = Parser::new(tokens);
+fn run()
+{
+    loop {
+        println!("");
+        let input = match cli_ui() {
+            Ok(input) => input,
+            Err(CliError::ReadError(e)) => {
+                eprintln!("Read error: {}", e);
+                return;
+            }
+        };
 
-    while parser.current_token().is_some() {
-        match parser.sense() {
-            Ok(_) => (),
+        if input.trim() == "exit" || input.trim() == "quit" {
+            println!("Goodbye! 👋");
+            break;
+        }
+        
+        let tokens = match lexer(&input) {
+            Ok(tokens) => {
+                tokens
+            }
             Err(err) => {
-                eprintln!("Parser error: {:?}", err);
-                break;
+                eprintln!("Lexer error: {}", err);
+                return;
+            }
+        };
+        
+
+        let mut parser = Parser::new(tokens);
+
+        while parser.current_token().is_some() {
+            match parser.sense() {
+                Ok(_) => (),
+                Err(err) => {
+                    eprintln!("Parser error: {:?}", err);
+                    break;
+                }
             }
         }
     }
+    
 }
