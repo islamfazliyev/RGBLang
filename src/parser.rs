@@ -16,7 +16,6 @@ pub struct Parser {
     breakpoint_pos: Option<usize>,
 }
 
-
 impl Parser {
     pub fn new(tokens: Vec<Tokens>) -> Self {
         Parser {
@@ -140,6 +139,13 @@ impl Parser {
                         found: Some(tok.clone()),
                     });
                 }
+
+                Tokens::DEBUG => {
+                    self.eat(Tokens::DEBUG)?;
+                    println!("\n{:?}", self.tokens);
+                    Ok(())
+                }
+
                 _ => {
                     let name = format!("{:?}", tok);
                     self.output.push("unknown".to_string());

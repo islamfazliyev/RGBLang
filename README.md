@@ -32,6 +32,9 @@ cargo run
 - `R(n)` = Repeat previous pattern `n` times
 - `.` = Breakpoint (start repetition from here)
 
+## Commands
+- `!debug` = Shows used tokens
+
 ## 🔍 See Also
 
 For a more advanced implementation with additional features like compound expressions and professional error handling, check out:

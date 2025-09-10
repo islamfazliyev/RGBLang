@@ -9,4 +9,5 @@ pub enum Tokens {
     CLOSEBRACKET,
     REPEAT,
     VALUE(i32 ),
+    DEBUG,
 }

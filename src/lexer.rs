@@ -1,3 +1,5 @@
+use std::string;
+
 use crate::tokens::{Tokens};
 
 pub  fn lexer(content: &str) -> Result<Vec<Tokens>, String>
@@ -45,6 +47,20 @@ pub  fn lexer(content: &str) -> Result<Vec<Tokens>, String>
                     '1' => token.push(Tokens::GREEN),
                     '2' => token.push(Tokens::BLUE),
                     _ => return Err(format!("Unexpected digit: '{}'", d)),
+                }
+            },
+            '!' => {
+                let mut command = String::new();
+                while let Some(peek) = chars.peek() {
+                    if peek.is_ascii_alphabetic() {
+                        command.push(chars.next().unwrap());
+                    } else {
+                        break;
+                    }
+                }
+                match command.as_str() {
+                    "debug" => token.push(Tokens::DEBUG),
+                    _ => return Err(format!("Unknown command: !{}", command)), 
                 }
             },
             _ => {
