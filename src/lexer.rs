@@ -63,6 +63,9 @@ pub  fn lexer(content: &str) -> Result<Vec<Tokens>, String>
                     _ => return Err(format!("Unknown command: !{}", command)), 
                 }
             },
+            c if c.is_whitespace() => {
+                continue;
+            }
             _ => {
                 return Err(format!("Unexpected character: '{}'", c));
             },
