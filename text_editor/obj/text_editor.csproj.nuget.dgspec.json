@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/iso/Desktop/codes/rust/RGB-Interpreter/text_editor/text_editor.csproj": {}
+    "/home/iso/Documents/GitHub/RGBLang/text_editor/text_editor.csproj": {}
   },
   "projects": {
-    "/home/iso/Desktop/codes/rust/RGB-Interpreter/text_editor/text_editor.csproj": {
+    "/home/iso/Documents/GitHub/RGBLang/text_editor/text_editor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/iso/Desktop/codes/rust/RGB-Interpreter/text_editor/text_editor.csproj",
+        "projectUniqueName": "/home/iso/Documents/GitHub/RGBLang/text_editor/text_editor.csproj",
         "projectName": "text_editor",
-        "projectPath": "/home/iso/Desktop/codes/rust/RGB-Interpreter/text_editor/text_editor.csproj",
+        "projectPath": "/home/iso/Documents/GitHub/RGBLang/text_editor/text_editor.csproj",
         "packagesPath": "/home/iso/.nuget/packages/",
-        "outputPath": "/home/iso/Desktop/codes/rust/RGB-Interpreter/text_editor/obj/",
+        "outputPath": "/home/iso/Documents/GitHub/RGBLang/text_editor/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/iso/.nuget/NuGet/NuGet.Config"
@@ -20,7 +20,6 @@
           "net9.0"
         ],
         "sources": {
-          "/usr/lib64/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -66,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

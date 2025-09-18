@@ -60,6 +60,7 @@ pub  fn lexer(content: &str) -> Result<Vec<Tokens>, String>
                 }
                 match command.as_str() {
                     "debug" => token.push(Tokens::DEBUG),
+                    "help" => token.push(Tokens::HELP),
                     _ => return Err(format!("Unknown command: !{}", command)), 
                 }
             },

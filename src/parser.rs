@@ -1,6 +1,6 @@
 use std::error;
 
-use crate::{ tokens::Tokens};
+use crate::tokens::{self, Tokens};
 use colored::*;
 
 #[derive(Debug, Clone, PartialEq)]
@@ -143,6 +143,25 @@ impl Parser {
                 Tokens::DEBUG => {
                     self.eat(Tokens::DEBUG)?;
                     println!("\n{:?}", self.tokens);
+                    Ok(())
+                }
+
+                Tokens::HELP => {
+                    self.eat(Tokens::HELP);
+                    println!("=========================");
+                    println!("          HELP             ");
+                    println!("=========================");
+                    println!("\n Syntax:");
+                    println!("\n 0 = red");
+                    println!("\n 1 = green");
+                    println!("\n 2 = blue");
+                    println!("\n , = new line");
+                    println!("\n . = repeat start point");
+                    println!("\n R(n) = repeats pattern n times");
+                    println!("\n Commands:");
+                    println!("\n !help = prints help");
+                    println!("\n !debug = prints used tokens");
+                    
                     Ok(())
                 }
 

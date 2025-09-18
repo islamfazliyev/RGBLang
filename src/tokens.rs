@@ -8,6 +8,8 @@ pub enum Tokens {
     OPENBRACKET,
     CLOSEBRACKET,
     REPEAT,
-    VALUE(i32 ),
+    VALUE(i32),
     DEBUG,
+    HELP,
+    FUNC,
 }

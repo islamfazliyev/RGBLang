@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ehWIxwqf55g=",
+  "dgSpecHash": "KoRDS3KVKLM=",
   "success": true,
-  "projectFilePath": "/home/iso/Desktop/codes/rust/RGB-Interpreter/text_editor/text_editor.csproj",
+  "projectFilePath": "/home/iso/Documents/GitHub/RGBLang/text_editor/text_editor.csproj",
   "expectedPackageFiles": [
     "/home/iso/.nuget/packages/raylib-cs/7.0.1/raylib-cs.7.0.1.nupkg.sha512"
   ],
